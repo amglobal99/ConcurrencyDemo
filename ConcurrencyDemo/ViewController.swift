@@ -197,6 +197,8 @@ class ViewController: UIViewController {
         queue.addOperation(operation1)
         
         
+        
+        
         let operation2 = BlockOperation(block: {
             let img2 = Downloader.downloadImageWithURL(imageURLs[1])
             OperationQueue.main.addOperation({
@@ -212,6 +214,8 @@ class ViewController: UIViewController {
         queue.addOperation(operation2)
         
         
+        
+        
         let operation3 = BlockOperation(block: {
             let img3 = Downloader.downloadImageWithURL(imageURLs[2])
             OperationQueue.main.addOperation({
@@ -225,6 +229,8 @@ class ViewController: UIViewController {
             print("Operation 3 completed, isCancelled:\(operation3.isCancelled) ")
         }
         queue.addOperation(operation3)
+        
+        
         
         
         

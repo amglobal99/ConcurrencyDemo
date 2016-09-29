@@ -72,6 +72,11 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="740-DU-CFc">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DkQ-1d-UYV">
+                            <connections>
+                                <action selector="didClickOnCancel:" destination="BYZ-38-t0r" id="3FH-Zi-Q4H"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Start" id="BUt-RJ-v1h">
                             <connections>
                                 <action selector="didClickOnStartWithSender:" destination="BYZ-38-t0r" id="INk-Tr-nJC"/>

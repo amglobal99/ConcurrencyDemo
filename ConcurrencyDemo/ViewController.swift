@@ -80,6 +80,8 @@ class ViewController: UIViewController {
         queue.async {
                 () -> Void in
                 let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+                print("Obtained img1 ... now executing Disatcj")
+            
                 DispatchQueue.main.async (execute: {
                             self.imageView1.image = img1
                             })
@@ -99,9 +101,7 @@ class ViewController: UIViewController {
         queue.async { () -> Void in
             
             let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-            
             DispatchQueue.main.async(execute: {
-                
                 self.imageView3.image = img3
             })
             
@@ -113,9 +113,7 @@ class ViewController: UIViewController {
         queue.async { () -> Void in
             
             let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-            
             DispatchQueue.main.async( execute: {
-                
                 self.imageView4.image = img4
             })
         }

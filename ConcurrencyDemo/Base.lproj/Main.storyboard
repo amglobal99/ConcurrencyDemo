@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" id="740-DU-CFc">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="BUt-RJ-v1h">
                             <connections>
-                                <action selector="didClickOnStart:" destination="BYZ-38-t0r" id="dbx-va-pcb"/>
+                                <action selector="didClickOnStartWithSender:" destination="BYZ-38-t0r" id="INk-Tr-nJC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

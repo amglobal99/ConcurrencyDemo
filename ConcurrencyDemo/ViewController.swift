@@ -83,106 +83,15 @@ class ViewController: UIViewController {
     
     
     
-    
+    //   This function uses OperationBlock ( subclass of Operation)
+    //
+    //
+    //
     
     
     @IBAction func didClickOnStart(sender: AnyObject) {
         
-        /*
-       // let queue = dispatch_get_global_queue(DispatchQueue.GlobalQueuePriority.default, 0)
-        let queue = DispatchQueue.global(qos: .background)  // other options are 
-
-        
-        
-        //queue.asynchronously() { () -> Void in
-        queue.async {
-                () -> Void in
-                let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-                print("Obtained img1 ... now executing Disatcj")
-                DispatchQueue.main.async (execute: {
-                            self.imageView1.image = img1
-                            })
-        }  // end queue task
-        
-    
-        
-        queue.async  {
-                () -> Void in
-                let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-                DispatchQueue.main.async(execute: {
-                        self.imageView2.image = img2
-                    })
-        }
-        
-        
-        queue.async { () -> Void in
-            
-            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-            DispatchQueue.main.async(execute: {
-                self.imageView3.image = img3
-            })
-            
-        }
-        
-        
-        
-        
-        queue.async { () -> Void in
-            
-            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-            DispatchQueue.main.async( execute: {
-                self.imageView4.image = img4
-            })
-        }
-        
- 
- */
-        
-        
-        /*
-        let queue = OperationQueue()
-        
-        
-        
-        queue.addOperation { () -> Void in
-            let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-            OperationQueue.main.addOperation({
-                self.imageView1.image = img1
-            })
-        }
-        
-        
-        
-        queue.addOperation { () -> Void in
-            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-            OperationQueue.main.addOperation({
-                self.imageView2.image = img2
-            })
-            
-        }
-        
-        queue.addOperation { () -> Void in
-            let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-            OperationQueue.main.addOperation({
-                self.imageView3.image = img3
-            })
-            
-        }
-        
-        queue.addOperation { () -> Void in
-            let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-            OperationQueue.main.addOperation({
-                self.imageView4.image = img4
-            })
-            
-        }
- 
- 
- */
-        
-        
-        
-        
+      
         
         let operation1 = BlockOperation(block: {
             let img1 = Downloader.downloadImageWithURL(imageURLs[0])

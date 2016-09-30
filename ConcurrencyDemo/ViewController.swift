@@ -9,7 +9,10 @@
 import UIKit
 
 
-let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg", "http://adriatic-lines.com/wp-content/uploads/2015/04/canal-of-Venice.jpg", "http://algoos.com/wp-content/uploads/2015/08/ireland-02.jpg", "http://bdo.se/wp-content/uploads/2014/01/Stockholm1.jpg"]
+let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg",
+                 "http://adriatic-lines.com/wp-content/uploads/2015/04/canal-of-Venice.jpg",
+                 "http://algoos.com/wp-content/uploads/2015/08/ireland-02.jpg",
+                 "http://bdo.se/wp-content/uploads/2014/01/Stockholm1.jpg"]
 
 
 
@@ -21,9 +24,6 @@ class Downloader {
         return UIImage(data: data!)
     }
 }
-
-
-
 
 
 
@@ -46,39 +46,20 @@ class ViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
     }
 
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    
-    /*
-     * This code is without use of any operations
-     */
-     
-    @IBAction func didClickOnStart(_ sender: AnyObject) {
-        
-        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-        self.imageView1.image = img1
-        
-        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-        self.imageView2.image = img2
-        
-        let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-        self.imageView3.image = img3
-        
-        let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-        self.imageView4.image = img4
-        
-    }
-    
     
     
     
@@ -92,6 +73,13 @@ class ViewController: UIViewController {
     @IBAction func didClickOnStart(sender: AnyObject) {
         
       
+        // To make this a serial queue, enable line below
+        //queue.maxConcurrentOperationCount = 1
+        
+        
+        
+        
+        
         
         let operation1 = BlockOperation(block: {
             let img1 = Downloader.downloadImageWithURL(imageURLs[0])
@@ -103,6 +91,7 @@ class ViewController: UIViewController {
         operation1.completionBlock = {
             print("Operation 1 completed, isCancelled:\(operation1.isCancelled) ")
         }
+        
         queue.addOperation(operation1)
         
         
@@ -115,7 +104,7 @@ class ViewController: UIViewController {
             })
         })
             // ***** Add a dependency
-        operation2.addDependency(operation1)
+        //operation2.addDependency(operation1)
         operation2.completionBlock = {
             //print("Operation 2 completed")
             print("Operation 2 completed, isCancelled:\(operation2.isCancelled) ")
@@ -132,7 +121,7 @@ class ViewController: UIViewController {
             })
         })
          // **** Add a dependency
-        operation3.addDependency(operation2)
+       // operation3.addDependency(operation2)
 
         operation3.completionBlock = {
             print("Operation 3 completed, isCancelled:\(operation3.isCancelled) ")
